@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corona Virus</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheets/coronaStyle.css">
+</head>
+<body onload="loadFunction()">
+	<header>
+		<nav>
+			<a href=""><h1>Corona Tracker</h1></a>
+			<div class="navList">
+				<a href="https://en.wikipedia.org/wiki/COVID-19_pandemic" target="_blank">Covid-19 Wiki</a>
+				<a href="https://www.who.int/westernpacific/emergencies/covid-19/news-covid-19" target="_blank">Latest News</a>
+				<a href="https://www.facebook.com/surajan.shrestha.77" target="_blank">About Developer</a>
+			</ul>
+		</nav>
+	</header>
+	<div class="main">
+		<h2>Country Info:</h2>
+		<input list="countryOptions" name="countryName" id="countryNameId">
+		<datalist id="countryOptions"></datalist><br>
+		<button type="button" id="button"><a href="javascript:void(0)">Get Info</a></button>
+		<div id="result"></div>
+	</div>
+	<div class="main">
+		<h2>Global Info:</h2>
+		<div id="totalResult"></div>
+	</div>
+	<div class="embedTimeline">
+		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+		<div class="elfsight-app-611dbc8d-006c-4d72-a28a-b3d4291b690b"></div>		
+	</div>
+	<footer>
+		<div>
+			<h4>&copy;Surajan Shrestha-2020</h4>
+			<div class="githubDiv">
+				<a href="https://github.com/SurajanShrestha/First-Repository" target="_blank"><img src="https://i.ya-webdesign.com/images/github-icon-png-7.png"></a>
+			</div>
+			<div class="imgDiv">
+				<a href="https://twitter.com/ShresthaSurajan" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/twitter-3.svg"></a>
+				<a href="https://www.facebook.com/surajan.shrestha.77" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+				<a href="https://medium.com/@surajanshrestha" target="_blank"><img src="https://miro.medium.com/max/390/1*emiGsBgJu2KHWyjluhKXQw.png"></a>
+				<a href="https://www.instagram.com/surajan_shrestha/" target="_blank"><img src="https://www.edigitalagency.com.au/wp-content/uploads/instagram-logo-svg-vector-for-print.svg"></a>	
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="scripts/coronaScript.js"></script>
+</body>
+</html>

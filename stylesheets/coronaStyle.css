@@ -1,0 +1,142 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	background: #051622;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+header{
+	width: 100%;
+	margin-bottom: 40px;
+	border-bottom: 1px solid white;
+}
+nav{
+	display: flex;
+	color: #1BA098;
+	width: 100%;
+}
+nav h1{
+	color: gainsboro;
+	font-size: 30px;
+	padding-left: 10px;
+}
+nav h1:hover{
+	color: white;
+}
+.navList{
+	margin: 0 0 0 auto;
+	width: 60%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+nav a{	
+	color: gainsboro;
+	text-decoration: none;
+	width: auto;
+	height: 30%;
+	margin-right: 5px; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav a:hover{
+	color: gray;
+}
+button{
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+}
+button:hover{
+	background: black;
+}
+button a{
+	text-decoration: none;
+	color: black;
+}
+button a:hover{
+	color: white;
+}
+footer{
+	color: #1BA098;
+	width: 100%;
+	height: 100%;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	margin-top: 40px;
+}
+footer div{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+footer img{
+	width: 30px;
+	height: 30px;
+}
+footer img:hover{
+	opacity: 0.5;
+}
+footer h4{
+	width: 30%;
+}
+.githubDiv{
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.imgDiv{
+	width: 30%;
+	display: flex;
+	justify-content: space-around;
+}
+@media (max-width: 800px){
+	.imgDiv{
+		width: 30%;
+		display: flex;
+		justify-content: space-around;		
+	}
+	.imgDiv img{
+		width: 25px;
+		height: 25px;
+	}
+}
+#countryList{
+	max-height: 400px;
+	width: 70%;
+	overflow: scroll;
+}
+.embedTimeline{
+	width: 32%;
+	height: 500px;
+	margin: 10px;
+}
+.main{
+	margin: 10px;
+	width: 30%;
+	height: 500px;
+	border: 3px solid white; 
+	border-radius: 12px;
+	background: #051622;
+	color: #1BA098;
+	text-align: center;
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+@media (max-width: 800px){
+	.embedTimeline{
+		width: 80%;
+	}
+	.main{
+		width: 80%;
+	}
+}
+.flexbox{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}

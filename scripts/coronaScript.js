@@ -5,7 +5,7 @@ function loadFunction(){
 	xhr.responseType="json";
 	xhr.onreadystatechange=()=>{
     	if(xhr.readyState===XMLHttpRequest.DONE){
-        	console.log(xhr.response);
+        	//console.log(xhr.response);
             let countryArray=xhr.response["response"];
             let html2="";
             countryArray.forEach((item)=>{
@@ -26,11 +26,12 @@ document.getElementById('button').addEventListener("click",()=>{
 	xhr.responseType="json";
 	xhr.onreadystatechange=()=>{
     	if(xhr.readyState===XMLHttpRequest.DONE){
-        	console.log(xhr.response);
-        	let countryResult=xhr.response;
+        	//console.log(xhr.response);
+			let countryResult=xhr.response;
+			let activeCases=countryResult.response[0].cases.total-countryResult.response[0].cases.recovered;
         	document.getElementById("result").innerHTML=`<p>Country Name: ${countryResult.parameters.country.toUpperCase()}<br>
         	Confirmed Cases: ${countryResult.response[0].cases.total}<br>Deaths: ${countryResult.response[0].deaths.total}<br>Recovered: 
-            ${countryResult.response[0].cases.recovered}<br>Active Cases: ${countryResult.response[0].cases.active}</p>`;
+            ${countryResult.response[0].cases.recovered}<br>Active Cases: ${activeCases}</p>`;
     	}
 	};
 	xhr.open('GET',url);
@@ -53,16 +54,18 @@ document.getElementById('button').addEventListener("click",()=>{
 })
 
 const xhr=new XMLHttpRequest();
-	const url="https://api.covid19api.com/summary";
-	xhr.responseType="json";
-	xhr.onreadystatechange=()=>{
-    	if(xhr.readyState===XMLHttpRequest.DONE){
-        	let html="";
-        	html=`<p>New Confirmed: ${xhr.response.Global["NewConfirmed"]}<br>New Deaths: ${xhr.response.Global["NewDeaths"]}<br>
-        	New Recovered: ${xhr.response.Global["NewRecovered"]}<br>Total Confirmed: ${xhr.response.Global["TotalConfirmed"]}<br>
-        	Total Deaths: ${xhr.response.Global["TotalDeaths"]}<br>Total Recovered: ${xhr.response.Global["TotalRecovered"]}</p>`;
-        	document.getElementById("totalResult").innerHTML=html;
-    	}
-	};
-	xhr.open('GET',url);
-	xhr.send();
+const url="https://api.covid19api.com/summary";
+xhr.responseType="json";
+xhr.onreadystatechange=()=>{
+ 	if(xhr.readyState===XMLHttpRequest.DONE){
+      	let html="";
+      	html=`<p>New Confirmed: ${xhr.response.Global["NewConfirmed"]}<br>New Deaths: ${xhr.response.Global["NewDeaths"]}<br>
+     	New Recovered: ${xhr.response.Global["NewRecovered"]}<br>Total Confirmed: ${xhr.response.Global["TotalConfirmed"]}<br>
+       	Total Deaths: ${xhr.response.Global["TotalDeaths"]}<br>Total Recovered: ${xhr.response.Global["TotalRecovered"]}</p>`;
+    	document.getElementById("totalResult").innerHTML=html;
+	}
+};
+xhr.open('GET',url);
+xhr.send();
+
+	

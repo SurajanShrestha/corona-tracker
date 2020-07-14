@@ -28,7 +28,7 @@ document.getElementById('button').addEventListener("click",()=>{
     	if(xhr.readyState===XMLHttpRequest.DONE){
         	//console.log(xhr.response);
 			let countryResult=xhr.response;
-			let activeCases=countryResult.response[0].cases.total-countryResult.response[0].cases.recovered;
+			let activeCases=countryResult.response[0].cases.total-countryResult.response[0].cases.recovered-countryResult.response[0].deaths.total;
         	document.getElementById("result").innerHTML=`<p>Country Name: ${countryResult.parameters.country.toUpperCase()}<br>
         	Confirmed Cases: ${countryResult.response[0].cases.total}<br>Deaths: ${countryResult.response[0].deaths.total}<br>Recovered: 
             ${countryResult.response[0].cases.recovered}<br>Active Cases: ${activeCases}</p>`;
